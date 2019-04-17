@@ -1,5 +1,11 @@
-<h1>default_list.html</h1>
+{% extends "bass.html" %}
+
+{% block content %}
+<h1>投票主題列表</h1>
 
 {% for items in poll_list %}
-    <div>{{ items.subject }}</div>
+    <div>{{ items.date_created }} <a href="{{ items.id}}/">{{ items.subject }}</a></div>
 {% endfor %}
+{% endblock %}
+
+{% block page_title %}主題列表{% endblock %}
